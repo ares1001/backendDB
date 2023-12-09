@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-</head>
+    <link rel="stylesheet" href="../../../public/css/index.css">
+    </head>
 <body>
     <%- include('../partials/header') %>
     <main>
         <h1>Listado de productos</h1>
 
-        <a href="/admin/producto/create">Crear</a>
+        <a href="/admin/productos/create">Crear</a>
 
         <table>
 <thead>
@@ -18,18 +19,24 @@
     <th>#</th>
     <th>Nombre</th>
     <th>Precio</th>
+    <th>Imagen</th>
+    <th></th>
 </tr>
-
-
-
 </thead>
 <tbody>
-    <% productos.forEach(producto=> {%> 
+    <% productos.forEach(producto => {%> 
 <tr>
     <td><%= producto.id %></td>
     <td><%= producto.nombre %></td>
 <td>$ <%= producto.precio %></td>
-<td>editar</td>
+<td>
+    <img
+      width="100"
+      src="/uploads/productos/producto_<%= producto.id %>.jpg"
+      alt="<%= producto.nombre %>"
+    />
+  </td>
+<td><a href="/admin/productos/<%= producto.id %>/edit">Editar</a></td>
 <td>borrar</td>
 
 </tr>

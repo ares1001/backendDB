@@ -1,0 +1,82 @@
+.h1 {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(0, 0, 0);     
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.registro{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.registro-inputs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+  .registro-inputs-container label {
+    width: 100%;
+    font-size: 16px;
+   
+  }
+  
+  
+  .registro-inputs-container input {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 40px;
+    border: 2px solid rgb(228, 45, 45);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .registro-inputs-container-ingresar{
+    display: flex;
+    align-items:flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+  }
+  .registro-inputs-container-ingresar input {
+    background-color: rgb(228, 45, 45);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+   
+  }
+  .registro-inputs-container-ingresar input:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(228, 45, 45);
+   
+  }
+  .registro-inputs-container input[type="checkbox"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .registro-inputs-container label {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+      

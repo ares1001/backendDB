@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
- 
+    <link rel="stylesheet" href="../../../public/css/create.css"/>
+    <link rel="stylesheet" href="../../../public/css/index.css">
 </head>
-
 <body>
     <%- include('../partials/header') %>
         <main>
-            <h1>Crear Producto</h1>
+            <h1>Editar Producto</h1>
 
             <% if (typeof errors != 'undefined') { %>
             <ul>
@@ -22,7 +21,7 @@
             <% } %>
 
             <form 
-            action="/admin/productos" 
+            action="/admin/productos/ <%= values.id %>?_method=PUT" 
             method="post"
             enctype="multipart/form-data">
 

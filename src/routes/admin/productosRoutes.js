@@ -27,9 +27,9 @@ router.get('/create', controller.create);
 
 router.post("/", upload.single("imagen"), validations, controller.store);
 
+router.get('/:id/edit',controller.edit);
 
-
-router.put('/:id',controller.update);
+router.put('/:id', upload.single("imagen"), validations,controller.update);
 
 router.delete('/:id',controller.destroy);
 
