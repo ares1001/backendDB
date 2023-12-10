@@ -27,14 +27,67 @@
             enctype="multipart/form-data">
 
             <div>
-                <label for="nombre">Nombre: </label>
+              <label for="nombre">Nombre: </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
+              />
+            </div>
+            <div>
+              <label for="precio">Precio: </label>
+              <input
+                type="number"
+                id="precio"
+                name="precio"
+                value="<%= typeof values != 'undefined' ? values.precio : '' %>"
+              />
+              <!-- </div>
+              <div>
+                <label for="producto">Nombre del Producto: </label>
                 <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
+                  type="string"
+                  id="producto"
+                  name="producto"
+                  value="<%= typeof values != 'undefined' ? values.producto : '' %>"
                 />
               </div>
+              <div>
+                <label for="licencia">Licencia: </label>
+                <input
+                  type="string"
+                  id="licencia"
+                  name="licencia"
+                  value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
+                />
+              </div>
+              <div>
+                <label for="descuento">Descuento: </label>
+                <input
+                  type="number"
+                  id="descuento"
+                  name="descuento"
+                  value="<%= typeof values != 'undefined' ? values.descuento : '' %>"
+                />
+              </div>
+              <div>
+                <label for="stock">Stock: </label>
+                <input
+                  type="number"
+                  id="stock"
+                  name="stock"
+                  value="<%= typeof values != 'undefined' ? values.stock : '' %>"
+                />
+              </div>
+              <div>
+                <label for="cuotas">Cuotas: </label>
+                <input
+                  type="number"
+                  id="cuotas"
+                  name="cuotas"
+                  value="<%= typeof values != 'undefined' ? values.cuotas : '' %>"
+                />
               <div>
                 <label for="precio">Precio: </label>
                 <input
@@ -43,6 +96,8 @@
                   name="precio"
                   value="<%= typeof values != 'undefined' ? values.precio : '' %>"
                 />
+              </div> -->
+              
               </div>
               <div>
                 <label for="imagen">Imagen: </label>
