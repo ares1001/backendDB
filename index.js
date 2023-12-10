@@ -10,18 +10,22 @@ app.set("view engine" , "ejs");
 app.set("views", "./src/views");
 
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: false}))
 app.use(express.static(path.join(__dirname + "/public")));
+
+
+
+app.use(require("./src/routes/authRoutes"));
 
 const mainRoutes = require('./src/routes/mainRoutes');
 app.use(mainRoutes);
 
-const adminProductosRoutes = require("./src/routes/admin/ProductosRoutes");
-
+const adminProductosRoutes = require("./src/routes/admin/productosRoutes");
 app.use('/admin/productos' , adminProductosRoutes);
 
 
-app.use((req, res, next) => {res.status(404).send("la pagina no existe")});
+app.use((req, res, next) => {
+  res.status(404).send("la pagina no existe")});
 
 
 
