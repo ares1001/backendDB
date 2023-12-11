@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../../partials/header') %>
         <main>
             <h1>Crear Producto</h1>
 
@@ -26,42 +26,36 @@
             method="post"
             enctype="multipart/form-data">
 
+         
+            </div>
+            <div>
+              <label for="codigo">Codigo: </label>
+              <input
+                type="text"
+                id="codigo"
+                name="codigo"
+                value="<%= typeof values != 'undefined' ? values.codigo : '' %>"
+              />
+            </div> 
+            <div>
+              <label for="licencia">Licencia: </label>
+              <input
+                type="string"
+                id="licencia"
+                name="licencia"
+                value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
+              />
+            </div>
             <div>
               <label for="nombre">Nombre: </label>
               <input
-                type="text"
+                type="string"
                 id="nombre"
                 name="nombre"
                 value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
               />
             </div>
-            <div>
-              <label for="precio">Precio: </label>
-              <input
-                type="number"
-                id="precio"
-                name="precio"
-                value="<%= typeof values != 'undefined' ? values.precio : '' %>"
-              />
-              <!-- </div>
-              <div>
-                <label for="producto">Nombre del Producto: </label>
-                <input
-                  type="string"
-                  id="producto"
-                  name="producto"
-                  value="<%= typeof values != 'undefined' ? values.producto : '' %>"
-                />
-              </div>
-              <div>
-                <label for="licencia">Licencia: </label>
-                <input
-                  type="string"
-                  id="licencia"
-                  name="licencia"
-                  value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
-                />
-              </div>
+            
               <div>
                 <label for="descuento">Descuento: </label>
                 <input
@@ -80,7 +74,9 @@
                   value="<%= typeof values != 'undefined' ? values.stock : '' %>"
                 />
               </div>
-              <div>
+             
+               </div>
+               <div>
                 <label for="cuotas">Cuotas: </label>
                 <input
                   type="number"
@@ -88,17 +84,16 @@
                   name="cuotas"
                   value="<%= typeof values != 'undefined' ? values.cuotas : '' %>"
                 />
-              <div>
-                <label for="precio">Precio: </label>
-                <input
-                  type="number"
-                  id="precio"
-                  name="precio"
-                  value="<%= typeof values != 'undefined' ? values.precio : '' %>"
-                />
-              </div> -->
-              
-              </div>
+            
+            </div>
+            <div>
+              <label for="precio">Precio: </label>
+              <input
+                type="number"
+                id="precio"
+                name="precio"
+                value="<%= typeof values != 'undefined' ? values.precio : '' %>"
+              />
               <div>
                 <label for="imagen">Imagen: </label>
                 <input type="file" id="imagen" name="imagen" accept="image/*" />
@@ -109,7 +104,7 @@
 
 
         </main>
-        <%- include('../partials/footer') %>
+        <%- include('../../partials/footer') %>
 </body>
 
 </html>

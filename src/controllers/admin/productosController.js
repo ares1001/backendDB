@@ -1,14 +1,17 @@
 const path = require("path");
 const sharp = require('sharp');
+const {unlink} = require('fs/promises');
+const {existsSync}= require('fs')
+
 
 const { validationResult } = require("express-validator");
 
-const model = require("../../models/Producto");
+const model = require("../../models/Product");
 
 const index = async (req, res) => {
     try {
         const productos = await model.findAll()
-        res.render("admin/index", { productos });
+        res.render("admin/productos/index", { productos });
     } catch (error) {
         res.status(500).send(error);
     }
@@ -16,7 +19,7 @@ const index = async (req, res) => {
 
 const create = (req, res) => {
     // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));// };
-    res.render('admin/create');
+    res.render('admin/productos/create');
 };
 
     const store = async (req, res) => {
@@ -25,7 +28,7 @@ const create = (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return res.render("admin/create", {
+        return res.render("admin/productos/create", {
             values: req.body,
             errors: errors.array(),
         });
@@ -60,7 +63,7 @@ try {
    console.log(producto);
 
    if(producto) {
-    res.render("admin/edit", {values:producto});
+    res.render("admin/productos/edit", {values:producto});
    } else {
     res.status(404).send(" No existe el producto")
    }
@@ -76,7 +79,7 @@ const update = async (req, res) => {
     const errors = validationResult(req);
   
     if (!errors.isEmpty()) {
-      return res.render("admin/edit", {
+      return res.render("admin/productos/edit", {
         values: req.body,
         errors: errors.array(),
       });
@@ -113,11 +116,37 @@ const update = async (req, res) => {
   };
 
 
-const destroy = (req, res) => {
-    console.log(req.params)
-    res.send("Producto borrado");
+const destroy = async (req, res) => {
+  try {
+    const destroyed = await model.destroy({
+      where: {
+        id:req.params.id
+      }
+    });
 
-};
+    if (destroyed == 1){
+      if (
+        existsSync (
+        path.resolve(
+          __dirname,
+          `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+        )
+        )
+     )
+     await  fs.unlink(
+        path.resolve(
+          __dirname,
+          `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+        )
+      );
+    }
+    res.redirect('/admin/productos')
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+    }
+ };
+
 module.exports = {
     index,
     create,

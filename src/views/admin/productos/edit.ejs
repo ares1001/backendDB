@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="../../../public/css/create.css"/>
+    <link rel="stylesheet" href="../../../public/css/index.css">
+</head>
+<body>
+    <%- include('../../partials/header') %>
+        <main>
+            <h1>Editar Producto</h1>
+
+            <% if (typeof errors != 'undefined') { %>
+            <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+            </ul>
+            <% } %>
+
+            <form 
+            action="/admin/productos/ <%= values.id %>?_method=PUT" 
+            method="post"
+            enctype="multipart/form-data">
+
+            
+      
+          <div>
+                <label for="codigo">Codigo: </label>
+                <input
+                  type="text"
+                  id="codigo"
+                  name="codigo"
+                  value="<%= typeof values != 'undefined' ? values.codigo : '' %>"
+                />
+              </div> 
+              <div>
+                <label for="licencia">Licencia: </label>
+                <input
+                  type="string"
+                  id="licencia"
+                  name="licencia"
+                  value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
+                />
+              </div>
+              <div>
+                <label for="nombre">Nombre: </label>
+                <input
+                  type="string"
+                  id="nombre"
+                  name="nombre"
+                  value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
+                />
+              </div>
+              
+                <div>
+                  <label for="descuento">Descuento: </label>
+                  <input
+                    type="number"
+                    id="descuento"
+                    name="descuento"
+                    value="<%= typeof values != 'undefined' ? values.descuento : '' %>"
+                  />
+                </div>
+                <div>
+                  <label for="stock">Stock: </label>
+                  <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    value="<%= typeof values != 'undefined' ? values.stock : '' %>"
+                  />
+                </div>
+               
+                 </div>
+                 <div>
+                  <label for="cuotas">Cuotas: </label>
+                  <input
+                    type="number"
+                    id="cuotas"
+                    name="cuotas"
+                    value="<%= typeof values != 'undefined' ? values.cuotas : '' %>"
+                  />
+              
+              </div>
+              <div>
+                <label for="precio">Precio: </label>
+                <input
+                  type="number"
+                  id="precio"
+                  name="precio"
+                  value="<%= typeof values != 'undefined' ? values.precio : '' %>"
+                />
+              <div>
+                <label for="imagen">Imagen: </label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" />
+              </div>
+                <button type="submit">Guardar</button>
+            </form>
+
+
+
+        </main>
+        <%- include('../../partials/footer') %>
+</body>
+
+</html>
