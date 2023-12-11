@@ -1,9 +1,8 @@
 const index = (req, res ) => {
-    res.render("inicio");
+    res.render("index");
 };
 
-// const shop= (req, res) => 
-// res.render("tienda/shop");
+
 
 module.exports= {
     index,

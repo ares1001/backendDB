@@ -129,14 +129,14 @@ const destroy = async (req, res) => {
         existsSync (
         path.resolve(
           __dirname,
-          `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+          `/../../public/uploads/productos/producto_${req.params.id}.jpg`
         )
         )
      )
      await  fs.unlink(
         path.resolve(
           __dirname,
-          `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+          `/../../public/uploads/productos/producto_${req.params.id}.jpg`
         )
       );
     }

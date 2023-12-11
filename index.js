@@ -45,6 +45,9 @@ app.use(require("./src/routes/authRoutes"));
 const mainRoutes = require('./src/routes/mainRoutes');
 app.use(mainRoutes);
 
+const shopRoutes = require('./src/routes/shopRoutes');
+app.use('/shop',shopRoutes);
+
 const adminProductosRoutes = require("./src/routes/admin/productosRoutes");
 app.use('/admin/productos' , isLogin, adminProductosRoutes);
 
