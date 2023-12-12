@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/register.css">
   </head>
   <body>
     <%- include('../partials/header') %>
     <main>
-      <h1>Registrarse</h1>
+      <div class="formcrear">
+        <div class="login">
+          <h1>
+            CREA TU CUENTA
+          </h1>
+          <h3>
+            Completa el formulario para ser parte del mundo de los Funkos
+          </h3>
 
       <% if (typeof errors != 'undefined') { %>
       <ul>
@@ -42,7 +51,76 @@
         </div>
         <button type="submit">Enviar</button>
       </form>
+        </div>
+      </div>
     </main>
     <%- include('../partials/footer') %>
   </body>
 </html>
+
+<main>
+  <div class="formcrear">
+  <div class="login">
+    <h1>
+      CREA TU CUENTA
+    </h1>
+    <h3>
+      Completa el formulario para ser parte del mundo de los Funkos
+    </h3>
+    <form action="registrarDatos" method="post">
+      <div class="email">
+        <h4>Nombre:</h4>
+        <div class="emailInput">
+          <input type="text" name="nombre" placeholder="John">
+          <hr>
+        </div>
+
+      </div>
+
+      <br>
+      <div class="email">
+        <h4>Apellido:</h4>
+        <div class="emailInput">
+          <input type="text" name="apellido" placeholder="Doe">
+          <hr>
+        </div>
+      </div>
+
+      <br>
+      <div class="email">
+        <h4>Email:</h4>
+        <div class="emailInput">
+          <input type="email" name="email" placeholder="johndoe@correo.com">
+          <hr>
+        </div>
+      </div>
+      <br>
+      <div class="email">
+        <h4>Contraseña:</h4>
+        <div class="emailInput">
+          <input type="password" name="contraseña" placeholder="● ● ● ● ● ● ● ● ● ●">
+          <hr>
+        </div>
+      </div>
+      <br>
+      <div class="email">
+        <h4>Repetir Contraseña:</h4>
+        <div class="emailInput">
+          <input type="password" name="contraseña" placeholder="● ● ● ● ● ● ● ● ● ● ●">
+          <hr>
+        </div>
+      </div>
+      <div class="recordar">
+        <input class="submit" type="submit" value="Ingresar">
+        <input type="checkbox" class="check" name="recordar">
+        <h4>Acepto</h4>
+        <h5 class="cuotas">Términos y condiciones</h5>
+
+      </div>
+
+    </form>
+
+
+  </div>
+</div>  
+</main>

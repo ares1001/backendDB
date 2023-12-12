@@ -5,7 +5,7 @@ const model = require("../models/Product");
 const index = async (req, res) => {
     try {
         const productos = await model.findAll()
-        res.render("shop/shop", { productos });
+        res.render("shop", { productos });
     } catch (error) {
         res.status(500).send(error);
     }

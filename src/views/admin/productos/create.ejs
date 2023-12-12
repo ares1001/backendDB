@@ -12,9 +12,8 @@
 
 <body>
     <%- include('../../partials/header') %>
-        <main>
-            <h1>Crear Producto</h1>
-
+        <main class="main">
+          <h1 class="crear-item">CREAR NUEVO ITEM</h1>
             <% if (typeof errors != 'undefined') { %>
             <ul>
             <% errors.forEach(error => { %>
@@ -30,74 +29,80 @@
 
          
             </div>
-            <div>
-              <label for="codigo">Codigo: </label>
+            <div class="contenedor-div">
+              <label class="categoria" for="codigo">Codigo 
               <input
                 type="text"
                 id="codigo"
                 name="codigo"
                 value="<%= typeof values != 'undefined' ? values.codigo : '' %>"
               />
+            </label>
             </div> 
             <div>
-              <label for="licencia">Licencia: </label>
+              <label class="subtitulos" for="licencia">Licencia: 
               <input
                 type="string"
                 id="licencia"
                 name="licencia"
                 value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
               />
+            </label>
             </div>
             <div>
-              <label for="nombre">Nombre: </label>
+              <label class="subtitulos" for="nombre">Nombre: 
               <input
                 type="string"
                 id="nombre"
                 name="nombre"
                 value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
               />
+            </label>
             </div>
             
               <div>
-                <label for="descuento">Descuento: </label>
+                <label class="subtitulos" for="descuento">Descuento: 
                 <input
                   type="number"
                   id="descuento"
                   name="descuento"
                   value="<%= typeof values != 'undefined' ? values.descuento : '' %>"
                 />
+              </label>
               </div>
               <div>
-                <label for="stock">Stock: </label>
+                <label class="subtitulos" for="stock">Stock: 
                 <input
                   type="number"
                   id="stock"
                   name="stock"
                   value="<%= typeof values != 'undefined' ? values.stock : '' %>"
                 />
+              </label>
               </div>
              
                </div>
                <div>
-                <label for="cuotas">Cuotas: </label>
+                <label class="subtitulos" for="cuotas">Cuotas:
                 <input
                   type="number"
                   id="cuotas"
                   name="cuotas"
                   value="<%= typeof values != 'undefined' ? values.cuotas : '' %>"
                 />
-            
+              </labe>
             </div>
             <div>
-              <label for="precio">Precio: </label>
+              < class="subtitulos" for="precio">Precio:
               <input
                 type="number"
                 id="precio"
                 name="precio"
                 value="<%= typeof values != 'undefined' ? values.precio : '' %>"
               />
+            </label>
               <div>
-                <label for="imagen">Imagen: </label>
+                < class="subtitulos" for="imagen">Imagen:
                 <input type="file" id="imagen" name="imagen" accept="image/*" />
               </div>
                 <button type="submit">Guardar</button>
