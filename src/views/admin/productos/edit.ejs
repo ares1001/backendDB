@@ -9,8 +9,8 @@
 </head>
 <body>
     <%- include('../../partials/header') %>
-        <main>
-            <h1>Editar Producto</h1>
+        <main class="main">
+            <h1 class="editar-item">Editar Producto</h1>
 
             <% if (typeof errors != 'undefined') { %>
             <ul>
@@ -28,7 +28,7 @@
             
       
           <div>
-                <label for="codigo">Codigo: </label>
+                <label class="subtitulos"for="codigo">Codigo: </label>
                 <input
                   type="text"
                   id="codigo"
@@ -37,7 +37,7 @@
                 />
               </div> 
               <div>
-                <label for="licencia">Licencia: </label>
+                <label class="subtitulos"for="licencia">Licencia: </label>
                 <input
                   type="string"
                   id="licencia"
@@ -46,7 +46,7 @@
                 />
               </div>
               <div>
-                <label for="nombre">Nombre: </label>
+                <label class="subtitulos"for="nombre">Nombre: </label>
                 <input
                   type="string"
                   id="nombre"
@@ -56,7 +56,7 @@
               </div>
               
                 <div>
-                  <label for="descuento">Descuento: </label>
+                  <label class="subtitulos"for="descuento">Descuento: </label>
                   <input
                     type="number"
                     id="descuento"
@@ -65,7 +65,7 @@
                   />
                 </div>
                 <div>
-                  <label for="stock">Stock: </label>
+                  <label class="subtitulos"for="stock">Stock: </label>
                   <input
                     type="number"
                     id="stock"
@@ -76,7 +76,7 @@
                
                  </div>
                  <div>
-                  <label for="cuotas">Cuotas: </label>
+                  <label class="subtitulos"for="cuotas">Cuotas: </label>
                   <input
                     type="number"
                     id="cuotas"
@@ -86,7 +86,7 @@
               
               </div>
               <div>
-                <label for="precio">Precio: </label>
+                <label class="subtitulos"for="precio">Precio: </label>
                 <input
                   type="number"
                   id="precio"
@@ -94,7 +94,7 @@
                   value="<%= typeof values != 'undefined' ? values.precio : '' %>"
                 />
               <div>
-                <label for="imagen">Imagen: </label>
+                <label class="subtitulos"for="imagen">Imagen: </label>
                 <input type="file" id="imagen" name="imagen" accept="image/*" />
               </div>
                 <button type="submit">Guardar</button>

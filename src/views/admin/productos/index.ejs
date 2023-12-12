@@ -1,91 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/product-list.css">
-    </head>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
 <body>
     <%- include('../../partials/headerLogout') %>
-    <main>
-        <div class="search__container">
-            <img class="product__list-lupa" src="/img/icons/magnifying-glass-solid.svg" alt="lupa"/>
-            <input class="search__box" type="text" placeholder="codigo,nombre o categoria">
-                  
-        </div>
-        <h1>Listado de productos</h1>
+        <main class="container">
+            <form action="" class="form__admin container">
+                <img class="form__img" src="/img/icons/search_icon.svg" alt="Lupa">
+                <div class="form__search">
+                    <input type="search" placeholder="código, nombre o categoria">
+                </div>
+            </form>
+            <div class="admin__contenido">
+                <div class="admin__productos">
+                    <h1>LISTADO DE PRODUCTOS</h1>
+                    <div class="productos__agregar">
+                        <a href="/admin/productos/create">Crear</a>
+                        <img class="plus-box" src="/img/icons/mdi_plus-box (1).svg" alt="mas">
+                   
 
-        <a href="/admin/productos/create">Crear</a>
+                    </div>
+                </div>
+                
 
-        <table>
-<thead>
-<tr>
-    <th>#</th>
-    <th>Codigo</th>
-    <th>Licencia</th>
-    <th>Producto</th>
-    <th>Descuento</th>
-    <th>Stock</th>
-    <th>Cuotas</th>
-    <th>Precio</th>
-</tr>
-</thead>
-<tbody>
-    <% productos.forEach(producto => {%> 
-<tr>
-    <td><%= producto.id %></td>
-    <td><%= producto.codigo %></td>
-    <td><%= producto.licencia %></td>
-    <td><%= producto.nombre %></td>
-    <td><%= producto.descuento %></td>
-    <td><%= producto.stock %></td>
-    <td><%= producto.cuotas %></td>
-<td>$ <%= producto.precio %></td>
-<td>
-    <img
-      width="100"
-      src="/uploads/productos/producto_<%= producto.id %>.jpg"
-      alt="<%= producto.nombre %>"
-    />
-  </td>
-<td><a href="/admin/productos/<%= producto.id %>/edit">Editar</a></td>
-<td>
-<form 
-class="form-delete"
-style="display: inline-block"
-action="/admin/productos/<%= producto.id %>?_method=DELETE"
-method="post"
->
-<button type="submit">Borrar</button>
-</form>
-</td>
-</tr>
-<%}) %>
+                <!-- <a href="/admin/productos/create">Crear</a> -->
 
-</tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Codigo</th>
+                            <th>Licencia</th>
+                            <th>Producto</th>
+                            <th>Descuento</th>
+                            <th>Stock</th>
+                            <th>Cuotas</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% productos.forEach(producto=> {%>
+                            <tr>
+                                <td>
+                                    <%= producto.id %>
+                                </td>
+                                <td>
+                                    <%= producto.codigo %>
+                                </td>
+                                <td>
+                                    <%= producto.licencia %>
+                                </td>
+                                <td>
+                                    <%= producto.nombre %>
+                                </td>
+                                <td>
+                                    <%= producto.descuento %>
+                                </td>
+                                <td>
+                                    <%= producto.stock %>
+                                </td>
+                                <td>
+                                    <%= producto.cuotas %>
+                                </td>
+                                <td>$ <%= producto.precio %>
+                                </td>
+
+                                <td>
+                                    <img width="100" src="/uploads/productos/producto_<%= producto.id %>.jpg"
+                                        alt="<%= producto.nombre %>" />
+                                </td>
+                                <!-- <td><a href="/admin/productos/<%= producto.id %>/edit">Editar</a></td> -->
+                                <td>
+                                    <form class="form-edit" style="display:flex"
+                                        action="/admin/productos/<%= producto.id %>/edit" method="put">
+                                        <button type="submit">Editar</button>
+                                    </form>
+                                    <form class="form-delete" style="display:flex"
+                                        action="/admin/productos/<%= producto.id %>?_method=DELETE" method="post">
+                                        <button type="submit">Borrar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <%}) %>
+
+                    </tbody>
 
 
 
-        </table>
-        
+                </table>
 
-    
-    </main>
-    <%- include('../../partials/footer') %>
-    <script>
-        document.addEventListener("submit" , (event)=> {
-            if(event.target.classList.contains("form-delete")){
-                event.preventDefault();
 
-               
+            </div>
+        </main>
+        <%- include('../../partials/footer') %>
+            <script>
+                document.addEventListener("submit", (event) => {
+                    if (event.target.classList.contains("form-delete")) {
+                        event.preventDefault();
 
-                if (confirm("Esta seguro?")){
-                    event.target.submit();
-                }
-            }
-        });
-        </script>
+
+
+                        if (confirm("Esta seguro?")) {
+                            event.target.submit();
+                        }
+                    }
+                });
+            </script>
 </body>
+
 </html>

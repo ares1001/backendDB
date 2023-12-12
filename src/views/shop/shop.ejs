@@ -7,228 +7,107 @@
     <link rel="shortcut icon" href="/img/branding/isotype.svg" type="image/x-icon">
     <title>carrito/funkoshop</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/shop.css">
+
+    <link rel="stylesheet" href="/css/shop2.css">
 </head>
 <%- include('../partials/header') %>
-<body>
-    
 
-<main class="shop">
-    <div class="formulario">
-    <form action="../admin/carrito.html" method="post">
-        <div class="buscar">
-            BUSCAR
-        <br>
-        <input type="search" name="buscar" placeholder="Ítem o Categoría" >
-        </div>
-        <br>
-        <div class="order">
-            ORDENAR POR
-        <br>
-        <select name="ordenar" >
-            <option value="v1">Mayor a Menor</option>
-            <option value="v2">Menor a Mayor</option>
-            <option value="v3">Predeterminado</option>
-        </select>
-        </div>
-        <br>
-        <div class="precio">
-            PRECIO
-        <br>
-        <div class="p">
-            MIN
-        <input type="number" name="precio" placeholder="0">
-            MAX
-        <input type="number" name="precio" placeholder="0">
-        </div>
-        </div>
-        <br>
-        <div class="filtro">
-            FILTRAR
-            <div class="checkbox">
-                <div class="tipos">
-                    <input type="checkbox" name="filtrar" >
-                    NUEVO
-                </div>
-            </div>
-  
-            <div class="checkbox">
-                <div class="tipos">
-                    <input type="checkbox" name="filtrar" >
-                    OFERTAS
-                </div>
-            </div>
-  
-            <div class="checkbox">
-                <div class="tipos">
-                    <input type="checkbox" name="filtrar" >
-                        EDICIÓN ESPECIAL
-                </div>   
-            </div>
-  
-            <div class="checkbox">
-                <div class="tipos">
-                    <input type="checkbox" name="filtrar" >
-                    FAVORITOS
-                </div>
-            </div>
-  </div>  
-  </form>
-    </div>
-    <div class="productos">
-        <div class="filas">
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/star-wars/luke-1.webp"  alt="Luke">
-                  <img class="card-item__img--back" src="/img/star-wars/luke-box.webp" alt="Luke">
-                </picture>
-  
-                <div class="info">
-                    <h4>STAR-WARS</h4>
-                    <h3>LUKE</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/pokemon/pikachu-1.webp" alt="Pikachu">
-                  <img class="card-item__img--back" src="/img/pokemon/pikachu-box.webp" alt="Luke">
-                </picture>
-                
-                <div class="info">
-                    <h4>POKEMON</h4>
-                    <h3>PIKACHU</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas"> 3 CUOTAS SIN INTERÉS</h5>
-                </div>
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/harry-potter/harry-1.webp" alt="Harry Potter">
-                  <img class="card-item__img--back" src="/img/harry-potter/harry-box.webp" alt="Harry Potter">
-                </picture>
-               
-                <div class="info">
-                    <h4>HARRY POTTER</h4>
-                    <h3>HARRY POTTER</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-            </div>
-        </div>
-        <div class="filas">
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/star-wars/trooper-1.webp" alt="Trooper">
-                  <img class="card-item__img--back" src="/img/star-wars/trooper-box.webp" alt="Trooper">
-                </picture>
-                <div class="info">
-                    <h4>STAR-WARS</h4>
-                    <h3>STORMTROOPER LIGHTSABER</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/pokemon/charmander-1.webp" alt="Charmander">
-                  <img class="card-item__img--back" src="/img/pokemon/charmander-box.webp" alt="Charmander">
-                </picture>
-                
-                <div class="info">
-                    <h4>POKEMON</h4>
-                    <h3>CHARMANDER</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas"> 3 CUOTAS SIN INTERÉS</h5>
-                </div>
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/harry-potter/hermione-1.webp" alt="Herminione">
-                  <img class="card-item__img--back" src="/img/harry-potter/hermione-box.webp" alt="Herminione">
-                </picture>
-                
-                <div class="info">
-                    <h4>HARRY POTTER</h4>
-                    <h3>HERMIONE</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-                
-            </div>
-        </div>
-        <div class="filas">
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/star-wars/bobbafeth-1.webp" alt="Bobba Feth">
-                  <img class="card-item__img--back" src="/img/star-wars/bobbafeth-box.webp" alt="Bobba Feth">
-                </picture>
-                
-                <div class="info">
-                    <h4>STAR-WARS</h4>
-                    <h3>BOBBA FETH</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-                
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/pokemon/dragonite-1.webp" alt="Dragonite">
-                  <img class="card-item__img--back" src="/img/pokemon/dragonite-box.webp" alt="Dragonite">
-                </picture>
-                <div class="info">
-                    <h4>POKEMON</h4>
-                    <h3>PIKACHU</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas"> 3 CUOTAS SIN INTERÉS</h5>
-                </div>
-                
-            </div>
-            <div class="produ">
-                <h5 class="new">NUEVO</h5>
-                <picture class="item__img card-item__cover">
-                  <img class="card-item__img--front" src="/img/harry-potter/luna-1.webp" alt="Luna">
-                  <img class="card-item__img--back" src="/img/harry-potter/luna-box.webp" alt="Luna">
-                </picture>
-                <div class="info">
-                    <h4>HARRY POTTER</h4>
-                    <h3>LUNA LOVEGOOD LION MASK</h3>
-                    <h4>$ 1799,99</h4>
-                    <h5 class="cuotas">3 CUOTAS SIN INTERÉS</h5>
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-  </main>
-           <section id="pagination">
-              <!-- pagination elements -->
-              <div class="pagination_section">
-                  <ul>
-                  <a href="#"><iconify-icon icon="ep:arrow-left-bold" /></a>
-                  <li class="active"><a href="#">1</a></li>
-                  <li class="link"><a href="#">2</a></li>
-                  <li>...</li>
-                  <li class="link"><a href="#">9</a></li>
-                  <li class="link"><a href="#">10</a></li>
-                  <li class="link"><a href="#"><iconify-icon icon="ep:arrow-right-bold" /></a></li>
-              </ul>
-              </div>
-          </section>
-          <%- include('../partials/footer') %>
+    <body>
 
-    <script src="/js/item.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-        </body>
+
+        <main class="shop-container">
+
+            <form class="form-container">
+                <div>
+                    <p class="search__title">BUSCAR</p>
+                    <input class="search__box" name="busqueda" type="text" placeholder="item o categoría" />
+                    <p class="search__title">ORDENAR POR </p>
+
+                    <select class="search__box" name="orden" aria-placeholder="Mayor a menor">
+                        <option value=""></option>
+                        <option value="1">STORMTROOPER</option>
+                        <option value="2">PIDGEOTTO</option>
+                        <option value="3">LUNA</option>
+                    </select>
+
+                    <div class="search__precios">
+                        <p class="search__title">PRECIO</p>
+                        <label class="search__precio">MIN</label>
+                        <input class="search__checkbox__title" name="precios" type="number" placeholder="0" />
+                        <label class="search__precio">MAX</label>
+                        <input class="search__checkbox__title" name="precios" type="number" placeholder="0" />
+                    </div>
+
+                    <div>
+                        <p class="search__title">FILTRAR</p>
+                        <input class="search__checkbox" type="checkbox" name="filter" value="Nuevos">
+                        <label class="search__checkbox__title"> NUEVOS</label><br>
+                        <input class="search__checkbox" type="checkbox" name="filter" value="Ofertas">
+                        <label class="search__checkbox__title"> OFERTAS</label><br>
+                        <input class="search__checkbox" type="checkbox" name="filter" value="Edicion Especial">
+                        <label class="search__checkbox__title"> EDICIÓN ESPECIAL</label><br>
+                        <input class="search__checkbox" type="checkbox" name="filter" value="Favoritos">
+                        <label class="search__checkbox__title"> FAVORITOS</label><br>
+
+                    </div>
+                </div>
+
+            </form>
+            <section class="shop-section">
+                <ul class="shop__items">
+
+                    <% productos.forEach(producto=> {%>
+
+                        <li class="shop_item">
+                            <article class="shop__item">
+                                <a class="shop-item__link" href="">
+                                    <picture class="shop-item__nuevo">
+                                        <span class="shop-item__tag">NUEVO</span>
+                                        <img class="shop-item__img--front"
+                                            src="/uploads/productos/producto_<%= producto.id %>.jpg"
+                                            alt=<%=producto.nombre%> />
+                                    </picture>
+                                    <div class="shop-item__content">
+                                        <h3 class="shop-item__license">
+                                            <%=producto.licencia%>
+                                        </h3>
+                                        <h4 class="shop-item__name">
+                                            <%=producto.nombre%>
+                                        </h4>
+                                        <p class="shop-item__price">
+                                            <%=producto.precio%>
+                                        </p>
+                                        <p class="shop-item__promo">
+                                            <%=producto.cuotas%>
+                                        </p>
+                                    </div>
+                                </a>
+                            </article>
+                        </li>
+
+
+                        <%}) %>
+                </ul>
+            </section>
+        </main>
+        <section id="pagination">
+            <!-- pagination elements -->
+            <div class="pagination_section">
+                <ul>
+                    <a href="#"><iconify-icon icon="ep:arrow-left-bold" /></a>
+                    <li class="active"><a href="#">1</a></li>
+                    <li class="link"><a href="#">2</a></li>
+                    <li>...</li>
+                    <li class="link"><a href="#">9</a></li>
+                    <li class="link"><a href="#">10</a></li>
+                    <li class="link"><a href="#"><iconify-icon icon="ep:arrow-right-bold" /></a></li>
+                </ul>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+
+            <script src="/js/item.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    </body>
+
 </html>
