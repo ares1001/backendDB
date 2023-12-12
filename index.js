@@ -52,6 +52,7 @@ const adminProductosRoutes = require("./src/routes/admin/productosRoutes");
 app.use('/admin/productos' , isLogin, adminProductosRoutes);
 
 
+
 app.use((req, res, next) => {
   res.status(404).send(`
   <html>

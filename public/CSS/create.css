@@ -1,140 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+.main{
+    width: 827.63px;
+    height: 669.3px;
+    margin-left: 250px;
+    margin-top: 30px;
 
-.create-container {
-    margin: 2rem 9rem;
 }
 
-.create-title {
-    font-family: 'Raleway', 'sans serif';
-    font-size: 2.625rem;
-    font-weight: bold;
-    color: #1F1F1F;
+.crear-item{
+    font-family: var(--alternative-font);
+    font-size: var(--font-xlarge);
+    margin-bottom: var(--spacing-24);
+
 }
 
-.create-categoria {
-    margin-top: 2rem;
+.contenedor-div{
     display: flex;
-    justify-content: space-between;
-    font-family: 'Inter', 'sans serif';
-    font-size: 2rem;
-    font-weight: lighter;
-    color: #000000;
-    width: 600px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 20px;
 }
 
-select {
-    width: 150px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: #000000;
+.categoria{
+    font-family: var(--alternative-font);
+    font-size: var(--font-medium);
+
 }
 
-.create-nombre {
+.selectores{
+    border-radius: 5px;
+    width: 243.03px;
+    height: 44.28px;
+    padding-left: 10px;
+    color: var(--light-color);
+}
+
+.subtitulos{
+    color: var(--dark-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-medium);
+    padding-right: 10px;
+   
+}
+
+.caracteristicas{
+    width: 662.4px;
+    height: 29px;
     display: flex;
-    justify-content: space-between;
-    font-family: 'Inter', 'sans serif';
-    font-size: 2rem;
-    font-weight: normal;
-    color: #000000;
-    width: 420px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 35px;
+    
 }
 
-.input-name {
-    width: 185px;
+.textarea{
+    width: 827.63px;
+    margin: 30px 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    color: var(--light-color);
+}
+
+
+.selectores-cuotas{
+    border-radius: 5px;
+    width: 346px;
+    height: 44px;
+    text-align: left;
+    padding-left: 10px;
+       
+}
+
+.input-sinborde-maslargo{
     border: none;
-    border-bottom: #FF3333 solid 2px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #B9B9B9;
+    border-bottom: 2px solid var(--primary-solid) ;
+    width: 20em;
+    text-align: center;
+    margin-left: 1em;
 }
 
-textarea {
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #B9B9B9;
-    margin-bottom: 2.5rem;
-}
-
-.create-info {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 2rem;
-    font-weight: normal;
-    color: #000000;
-    margin-bottom: 2.5rem;
-}
-
-.input-info {
-    width: 80px;
+.input-sinborde-largo {
     border: none;
-    border-bottom: #FF3333 solid 2px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #B9B9B9;
+    border-bottom: 2px solid var(--primary-solid) ;
+    width: 7em;
+    text-align: left;
+    margin-left: 1em;
 }
 
-.create-cuotas {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 2rem;
-    font-weight: normal;
-    color: #000000;
-    margin-bottom: 2.5rem;
-}
-
-.input-cuotas {
-    width: 40px;
+.input-sinborde-corto {
     border: none;
-    border-bottom: #FF3333 solid 2px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #B9B9B9;
+    border-bottom: 2px solid var(--primary-solid) ;
+    width: 4em;
+    text-align: center;
+    margin-left: 1em;
 }
 
-.select-cuotas {
-    width: 200px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: #000000;
-}
-
-.create-img {
+.pago-completo{
     display: flex;
-    justify-content: space-between;
-    width: 380px;
-    font-family: 'Inter', 'sans serif';
-    font-size: 2rem;
-    font-weight: normal;
-    color: #000000;
-    margin-bottom: 2.5rem;
+    align-items: center;
+    
 }
 
-.create-btn {
+.elegir-archivo{
+    border-radius: 5px;
+    width: 10em;
+    font-family: var(--base-font);    
+    font-size: 0,2em;
+    background-color: var(--light-color);
+    
+}
+
+.botones{
+    width: 384.14px;
+    height: 44.33px;
     display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-bottom: 4rem;
+   
 }
 
-button {
-    width: 130px;
-    height: 30px;
+.boton{
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 15px;
     border: none;
-    background-color: #FF3333;
-    font-family: 'Inter', 'sans serif';
-    font-size: 1rem;
-    font-weight: 600;
-    color: #FFFFFF;
+    padding: var(--spacing-6);
+}
+
+.div-imagenes {
+    display: flex;
+    width: 519.73px;
+    height: 29px;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.texto-imagenes {
+    font-family: var(--alternative-font);
+    font-size: 14px;
 }

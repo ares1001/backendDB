@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="../../../public/css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/product-list.css">
     </head>
 <body>
     <%- include('../../partials/header') %>
     <main>
+        <div class="search__container">
+            <img class="product__list-lupa" src="/img/icons/magnifying-glass-solid.svg" alt="lupa"/>
+            <input class="search__box" type="text" placeholder="codigo,nombre o categoria">
+                  
+        </div>
         <h1>Listado de productos</h1>
 
         <a href="/admin/productos/create">Crear</a>

@@ -13,9 +13,8 @@ const validations = [
     .bail()
     .isLength({min:2})
     .withMessage("Tiene que ser 2 caracteres")
-    .bail()
-    .isAlpha().withMessage('Solo puede tener letras'),
-    body("precio").not().isEmpty().withMessage("el nombre es obligatorio"),
+    .bail(),
+    body("precio").not().isEmpty().withMessage("el precio es obligatorio"),
 ];
 
 const controller = require('../../controllers/admin/productosController');

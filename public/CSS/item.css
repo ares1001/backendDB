@@ -1,236 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
-
-:root {
-    /* Palette  */
-    --primary-solid:#FF3333;
-    --primary-900:rgb(255, 51, 51, 0.9);
-    --primary-500:rgb(255, 51, 51, 0.5);
-    --primary-300:rgb(255, 51, 51, 0.3);
-    
-    --secondary-solid:#1d84b5;
-    --secondary-900: rgb(29, 132, 181, 0.9);
-    --secondary-500: rgb(29, 132, 181, 0.5);
-    --secondary-300: rgb(29, 132, 181, 0.3);
-    
-    --dark-solid:#1f1f1f;
-    --dark-900: rgb(31, 31, 31, 0.9);
-    --dark-500:rgb(31, 31, 31, 0.5);
-    --dark-300:rgb(31, 31, 31, 0.3);
-    
-    --dark-bg-solid: #30343f;
-    --light-bg-solid:#fafaff;
-    --light-font-solid:#ffffff;
-    
-    /* Tipography */
-    --base-font:'Inter', sans serif;
-    --alternative-font:'Raleway', sans serif;
-    
-    /* Font-sizes */
-    --font-display:4.8em;
-    --font-jumbo:3.8em;
-    --font-xlarge:3em;
-    --font-large:2.4em;
-    --font-medium:1.8em;
-    --font-small:1.6em;
-    --font-xsmall:1.4em;
-    
-    /* Spacings */
-    --spacing-128: 12.8rem;
-    --spacing-68:6.8rem;
-    --spacing-36:3.6rem;
-    --spacing-28:2.8rem;
-    --spacing-24: 2.4rem;
-    --spacing-20:2rem;
-    --spacing-16:1.6rem;
-    --spacing-12:1.2rem;
-    --spacing-8:0.8rem;
-    }
-.item_container {
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
-    align-items: center; 
-    padding: var(--spacing-16) 0;
-    padding-left: 100px;
-}
-
-.item_content {
+.todo{
     display: flex;
-    flex-direction:column;
-    gap:var(--spacing-24);
-    align-items: start;
-    padding-right: 200px;
+    align-items: center;
 }
-
-.item_img {
-    display: flex;
-    flex-direction:column;
-    gap:var(--spacing-24);
-    align-items: start;
-    height: 450px;
-    width: 450px;
+.item__name{
+    font-size: var(--font-jumbo );
 }
-
-.item_subtitle {
-    font-family: Inter;
-    font-size: 1rem;
-    font-weight: medium;
-    padding-bottom: 1rem;
-    color: #333333;
+.item__description{
+    font-size: var(--font-medium);
+    color: var(--dark-solid);
 }
-
-.item_title {
-    font-family: Inter;
-    font-size: 2.375rem;
-    font-weight: bold;
-    padding-bottom: 1rem;
-    color: #111111;
+.item__info{
+    margin: 200px;
 }
-
-.item_text {
-    font-family: Inter;
-    font-size: 1.5rem;
-    font-weight: normal;
-    padding-bottom: 1rem;
-    color: #333333;
+.item__description, .item__price, .item__cart{
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
-
-.item_precio {
-    font-family: Inter;
-    font-size: 2.375rem;
-    font-weight: normal;
-    padding-bottom: 1rem;
-    color: #333333;
+.item__price{
+    font-size: var(--font-large);
+    color: var(--dark-solid) ;
 }
-
-.item_cantidad {
-    width: 10.5rem;
-    height: 3.5rem;
-    font-family: Inter;
-    font-weight: 700;
-    color:var(--dark-bg-solid);
+.item__input{
+    border-color: #C9C9C9;
+    width: 80px;
+    height: 35px;
+    padding: 5px;
     text-align: center;
-    margin-left: 1rem;
-    border:0.5px solid grey
+    border-style: ridge;
+    font-size: var(--font-small);
 }
-
-
-
-.item__quantity {
-    width: 2rem;
-    height:2rem;
-    background-color:var(--dark-bg-solid);
-    border: transparent;
-    font-family: Inter;
-    color: #FFFFFF;
-    font-size: var(--font-xsmall);
-    font-weight: normal;
-    margin-left: 1rem;
-   
-}
-
 .item__submit{
-    width: 18rem;
-    height: 3.8rem;
     background-color: var(--primary-solid);
-    color:var(--light-bg-solid);
-    border-color: transparent;
-    font-size:var(--font-medium);
-    font-family: var(--base-font);
-    font-weight: 400;
-    margin-left: 2rem;
+    color: var(--light-font-solid);
+    padding: 10px;
+    border-style: none;
+    margin-left: 40px;
 }
 
-.item_button:hover {
-    background-color: #b61010;
-    /*height: 2.5rem;*/
+
+.pago{
+    color: var(--secondary-solid);
+    font-size: var(--font-small);
 }
 
-.item_cuotas {
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: #1D84B5;
-}
-
-.item_link {
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: #1D84B5;
-    text-decoration: underline;
-}
-
-.relacionados {
-    margin: 50px 70px;
-}
-
-.relacionados_container {
-    display: flex;
-    gap:var(--spacing-24);
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.relacionados_title {
-    font-family: Raleway;
-    font-size: 2.875rem;
-    font-weight: bold;
-    color: #111111;
-}
-
-.card_cover{
-    display: flex;
-    position: relative;
-}
-
-.card_nuevo {
-    margin-top: 40px;
-    margin-left: 180px;
-    background-color: #FF3333;
-    width: 50px;
-    height: 18px;
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-weight: medium;
-    color: #FFFFFF;
-    text-align: center;
-    padding-top: 3.5px;
-}
-
-.card_img {
-    width: 250px;
-    height: 250px;
-}
-
-.card_subtitle {
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-weight: medium;
-    color: #333333;
-    padding-bottom: 1rem;
-}
-
-.card_title {
-    font-family: Inter;
-    font-size: 1.125rem;
-    font-weight: bold;
-    color: #111111;
-    padding-bottom: 1rem;
-}
-
-.card_precio {
-    font-family: Inter;
-    font-size: 1rem;
-    font-weight: normal;
-    color: #333333;
-    padding-bottom: 1rem;
-}
-
-.card_cuotas {
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: bold;
-    color: #1D84B5;
-    padding-bottom: 1rem;
-}
