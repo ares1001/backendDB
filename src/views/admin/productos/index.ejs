@@ -11,6 +11,7 @@
 
 <body>
     <%- include('../../partials/headerLogout') %>
+    
         <main class="container">
             <form action="" class="form__admin container">
                 <img class="form__img" src="/img/icons/search_icon.svg" alt="Lupa">
@@ -28,21 +29,14 @@
 
                     </div>
                 </div>
-                
-
-                <!-- <a href="/admin/productos/create">Crear</a> -->
-
                 <table>
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Id</th>
                             <th>Codigo</th>
-                            <th>Licencia</th>
-                            <th>Producto</th>
-                            <th>Descuento</th>
-                            <th>Stock</th>
-                            <th>Cuotas</th>
-                            <th>Precio</th>
+                            <th>Nombre del Producto</th>
+                            <th>Categoria</th>
+                    
                         </tr>
                     </thead>
                     <tbody>
@@ -55,28 +49,16 @@
                                     <%= producto.codigo %>
                                 </td>
                                 <td>
-                                    <%= producto.licencia %>
-                                </td>
-                                <td>
                                     <%= producto.nombre %>
                                 </td>
                                 <td>
-                                    <%= producto.descuento %>
+                                    <%= producto.licencia %>
                                 </td>
-                                <td>
-                                    <%= producto.stock %>
-                                </td>
-                                <td>
-                                    <%= producto.cuotas %>
-                                </td>
-                                <td>$ <%= producto.precio %>
-                                </td>
-
-                                <td>
-                                    <img width="100" src="/uploads/productos/producto_<%= producto.id %>.jpg"
-                                        alt="<%= producto.nombre %>" />
-                                </td>
-                                <!-- <td><a href="/admin/productos/<%= producto.id %>/edit">Editar</a></td> -->
+                                
+    
+                    
+                                
+                            
                                 <td>
                                     <form class="form-edit" style="display:flex"
                                         action="/admin/productos/<%= producto.id %>/edit" method="put">
