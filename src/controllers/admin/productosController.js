@@ -4,22 +4,26 @@ const {unlink} = require('fs/promises');
 const {existsSync}= require('fs')
 
 
+
 const { validationResult } = require("express-validator");
 
 const model = require("../../models/Product");
+const modelCat = require("../../models/Category");
 
 const index = async (req, res) => {
     try {
         const productos = await model.findAll()
+        
         res.render("admin/productos/index", { productos });
     } catch (error) {
         res.status(500).send(error);
     }
 };
 
-const create = (req, res) => {
+const create = async (req, res) => {
     // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));// };
-    res.render('admin/productos/create');
+    const cate = await modelCat.findAll()
+    res.render('admin/productos/create', {cate});
 };
 
     const store = async (req, res) => {
@@ -41,6 +45,7 @@ const create = (req, res) => {
         if (req.file) {
             sharp(req.file.buffer)
                 .resize(300)
+                .flatten({ background: '#fff' })
                 .toFile(
                     path.resolve(
                         __dirname,
@@ -58,7 +63,8 @@ const create = (req, res) => {
 };
 
 const edit = async (req, res ) => {
-try {
+
+  try {
    const producto = await model.findByPk(req.params.id);
    console.log(producto);
 
@@ -96,6 +102,7 @@ const update = async (req, res) => {
         if (req.file) {
           sharp(req.file.buffer)
             .resize(300)
+            .flatten({ background: '#fff' })
             .toFile(
               path.resolve(
                 __dirname,

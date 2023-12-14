@@ -6,13 +6,13 @@ const router = express.Router();
 const {body} = require("express-validator");
 
 const validations = [
-    body("nombre")
+    body("name")
     .not()
     .isEmpty()
     .withMessage("El nombre es obligatorio")
     .bail()
-    .isLength({min:2})
-    .withMessage("Tiene que ser 2 caracteres")
+    .isLength({min:3})
+    .withMessage("Tiene que ser 3 caracteres")
     .bail()
     
 ];

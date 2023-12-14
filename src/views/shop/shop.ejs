@@ -60,7 +60,7 @@
 
                         <li class="shop_item">
                             <article class="shop__item">
-                                <a class="shop-item__link" href="">
+                                <a class="shop-item__link" href="/carrito/?id=<%= producto.id %>">
                                     <picture class="shop-item__nuevo">
                                         <span class="shop-item__tag">NUEVO</span>
                                         <img class="shop-item__img--front"
@@ -75,7 +75,7 @@
                                             <%=producto.nombre%>
                                         </h4>
                                         <p class="shop-item__price">
-                                            <%=producto.precio%>
+                                            $<%=producto.precio%>
                                         </p>
                                         <p class="shop-item__promo">
                                             <%=producto.cuotas%>

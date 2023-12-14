@@ -4,8 +4,10 @@ const model = require("../models/Product");
 
 const index = async (req, res) => {
     try {
-        const productos = await model.findAll()
-        res.render("shop", { productos });
+        const a=req.query.id
+        const productos = await model.findOne({where:{id:a}})
+        console.log(productos)
+        res.render("shop/cart", { productos });
     } catch (error) {
         res.status(500).send(error);
     }

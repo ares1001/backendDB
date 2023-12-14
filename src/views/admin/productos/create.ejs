@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/create.css">
     
  
 </head>
@@ -34,10 +35,12 @@
               <label class="subtitulos" for=""><strong>Licencia:</strong>
               <select class="selectores" name="licencia" 
                   id="licencia" placeholder="Seleccionar">
-                      <option value="">Seleccionar</option>
-                      <option value="STAR WARS">Star Wars</option>
-                      <option value="Pokemon">Pokemon</option>
-                      <option value="Harry Potter">Harry Potter</option>
+                  <% cate.forEach(categories=> {%>
+                    
+
+                      <option value="<%=categories.name%>"><%=categories.name%></option>
+                     
+                      <%}) %>
                   </select>
               </label>        
       </div>
@@ -45,34 +48,37 @@
       
           <div>
   
-              <label class="subtitulos" for=""><strong>Nombre del producto:</strong> <input class="input-sinborde-maslargo" type="text" name="name"
-                      placeholder="Kakashi Hatake Shippuden Saga"></label>
+              <label class="subtitulos" for=""><strong>Nombre del producto:</strong> 
+                <input class="input-sinborde-maslargo" 
+                type="text" 
+                name="nombre"
+                placeholder=""></label>
   
           </div>
           <div>
-              <textarea class="textarea" name="nombre" rows="10" cols="40">Descripción del producto</textarea>
+              <textarea class="textarea" name="descripcion" rows="10" cols="40">Descripción del producto</textarea>
           </div>
           <div class="caracteristicas">
               <!--VER EL TYPE DE INT-->
               <label class="subtitulos" for=""><strong>SKU:</strong> 
-                  <input class="input-sinborde-largo" type="text" name="codigo" placeholder="SSK111AB001"></label>
+                  <input class="input-sinborde-largo" type="text" name="codigo" placeholder=""></label>
               <label class="subtitulos" for=""> <strong>Precio:</strong> 
-                  <input class="input-sinborde-largo" type="int" name="precio" placeholder="$0.000,00"></label>
+                  <input class="input-sinborde-largo" type="int" name="precio" placeholder=""></label>
               <label class="subtitulos" for=""><strong>Stock:</strong>
-                  <input class="input-sinborde-corto" type="int" name="stock" placeholder="0"></label>
+                  <input class="input-sinborde-corto" type="int" name="stock" placeholder="5"></label>
   
           </div>
       <div class="pago-completo">
           <div class="pago">
               <label class="subtitulos" for=""><strong>Descuento:</strong> 
-                <input class="input-sinborde-corto" type="int" name="descuento" placeholder="0%"></label>
+                <input class="input-sinborde-corto" type="int" name="descuento" placeholder="0"></label>
               <label class="subtitulos" for=""><strong>Cuotas:</strong></label>
   
           </div>
           <div>
               <select class="selectores-cuotas" name="cuotas" id="cuotas"
                           placeholder="3 Cuotas sin interés">
-                          <option value="3">3 Cuotas sin interés</option>
+                          <option value="">3 Cuotas sin interés</option>
                       </select>
           </div>
       </div>

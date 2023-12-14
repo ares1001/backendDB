@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>categorias</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/product-list.css">
 </head>
-
 <body>
     <%- include('../../partials/headerLogout') %>
-    
-        <main class="container">
+            <main class="container">
             <form action="" class="form__admin container">
                 <img class="form__img" src="/img/icons/search_icon.svg" alt="Lupa">
                 <div class="form__search">
@@ -21,38 +18,27 @@
             </form>
             <div class="admin__contenido">
                 <div class="admin__productos">
-                    <h1>LISTADO DE PRODUCTOS</h1>
+                    <h1>LISTADO DE CATEGORIAS</h1>
                     <div class="productos__agregar">
-                        <a href="/admin/productos/create"><img class="plus-box" src="/img/icons/mdi_plus-box (1).svg" alt="mas"></a>
-                        
-                   
-
-                    </div>
+                        <a href="/admin/categorias/create"><img class="plus-box" src="/img/icons/mdi_plus-box (1).svg" alt="mas"></a>
+                        </div>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Codigo</th>
-                            <th>Nombre del Producto</th>
                             <th>Categoria</th>
                     
                         </tr>
                     </thead>
                     <tbody>
-                        <% productos.forEach(producto=> {%>
+                        <% categorias.forEach(categoria=> {%>
                             <tr>
                                 <td>
-                                    <%= producto.id %>
+                                    <%= categoria.id %>
                                 </td>
                                 <td>
-                                    <%= producto.codigo %>
-                                </td>
-                                <td>
-                                    <%= producto.nombre %>
-                                </td>
-                                <td>
-                                    <%= producto.licencia %>
+                                    <%= categoria.name %>
                                 </td>
                                 
     
@@ -61,12 +47,12 @@
                             
                                 <td>
                                     <form class="form-edit" style="display:inline"
-                                        action="/admin/productos/<%= producto.id %>/edit" method="put">
+                                        action="/admin/categorias/<%= categoria.id %>/edit" method="put">
                                         <button class="boton" type="submit">Editar</button>
                                     </form>
                                     
                                     <form class="form-delete" style="display:inline"
-                                        action="/admin/productos/<%= producto.id %>?_method=DELETE" method="post">
+                                        action="/admin/categorias/<%= categoria.id %>?_method=DELETE" method="post">
                                         <button class="boton" type="submit">Borrar</button>
                                     </form>
                                 </td>

@@ -4,7 +4,7 @@ const sequelize = require("./connect");
 const Category = sequelize.define("Category", {
 
   
-  nombre:{
+  name:{
     type: DataTypes.STRING,
     allowNull: false,
     

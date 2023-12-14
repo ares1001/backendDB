@@ -2,9 +2,12 @@ const { validationResult } = require("express-validator");
 
 const model = require("../models/Product");
 
+
+
 const index = async (req, res) => {
     try {
         const productos = await model.findAll()
+        
         res.render("shop/shop", { productos });
     } catch (error) {
         res.status(500).send(error);
@@ -17,34 +20,16 @@ const index = async (req, res) => {
 // };
 
 //     const store = async (req, res) => {
-//     console.log(req.body, req.file);
+//     console.log(req.body);
 
-//     const errors = validationResult(req);
-
-//     if (!errors.isEmpty()) {
-//         return res.render("admin/productos/create", {
-//             values: req.body,
-//             errors: errors.array(),
-//         });
-//     }
 
 //     try {
-//         const producto = await model.create(req.body);
+//         const producto = await model.findOne(req.body);
 //         console.log(producto);
 
-//         if (req.file) {
-//             sharp(req.file.buffer)
-//                 .resize(300)
-//                 .toFile(
-//                     path.resolve(
-//                         __dirname,
-//                 `../../../public/uploads/productos/producto_${producto.id}.jpg`
-//                 )
-//                 )
-//                 .catch((err) => console.log(err));
-//         }
+     
 
-//         res.redirect("/admin/productos");
+//         res.render("/cart");
 //     } catch (error) {
 //         console.log(error);
 //         res.status(500).send(error);
@@ -144,7 +129,7 @@ const index = async (req, res) => {
 module.exports = {
     index,
     // create,
-    // store,
+    //  store,
     // edit,
     // update,
     // destroy,

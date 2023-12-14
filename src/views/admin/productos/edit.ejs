@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <link rel="stylesheet" href="/css/edit.css"/>
+    <title>Editar Productos</title>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/create.css">
 </head>
 <body>
     <%- include('../../partials/header') %>
+    <form 
+    action="/admin/productos" 
+    method="post"
+    enctype="multipart/form-data">
+    
         <main class="main">
-            <h1 class="editar-item">Editar Producto</h1>
+            <h1 class="crear-item">EDITAR PRODUCTO</h1>
 
             <% if (typeof errors != 'undefined') { %>
             <ul>
@@ -21,83 +26,59 @@
             <% } %>
 
             <form 
-            action="/admin/productos/ <%= values.id %>?_method=PUT" 
+            action="/admin/productos/<%= values.id %>?_method=PUT" 
             method="post"
             enctype="multipart/form-data">
 
             
       
+            <div>
+  
+              <label class="subtitulos" for=""><strong>Nombre del producto:</strong> 
+                <input class="input-sinborde-maslargo" 
+                type="text" 
+                name="nombre"
+                placeholder=""></label>
+  
+          </div>
           <div>
-                <label class="subtitulos"for="codigo">Codigo: </label>
-                <input
-                  type="text"
-                  id="codigo"
-                  name="codigo"
-                  value="<%= typeof values != 'undefined' ? values.codigo : '' %>"
-                />
-              </div> 
-              <div>
-                <label class="subtitulos"for="licencia">Licencia: </label>
-                <input
-                  type="string"
-                  id="licencia"
-                  name="licencia"
-                  value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
-                />
-              </div>
-              <div>
-                <label class="subtitulos"for="nombre">Nombre: </label>
-                <input
-                  type="string"
-                  id="nombre"
-                  name="nombre"
-                  value="<%= typeof values != 'undefined' ? values.nombre : '' %>"
-                />
-              </div>
+              <textarea class="textarea" name="descripcion" rows="10" cols="40">Descripción del producto</textarea>
+          </div>
+          <div class="caracteristicas">
+              <!--VER EL TYPE DE INT-->
+              <label class="subtitulos" for=""><strong>SKU:</strong> 
+                  <input class="input-sinborde-largo" type="text" name="codigo" placeholder=""></label>
+              <label class="subtitulos" for=""> <strong>Precio:</strong> 
+                  <input class="input-sinborde-largo" type="int" name="precio" placeholder=""></label>
+              <label class="subtitulos" for=""><strong>Stock:</strong>
+                  <input class="input-sinborde-corto" type="int" name="stock" placeholder="5"></label>
+  
+          </div>
+      <div class="pago-completo">
+          <div class="pago">
+              <label class="subtitulos" for=""><strong>Descuento:</strong> 
+                <input class="input-sinborde-corto" type="int" name="descuento" placeholder="0"></label>
+              <label class="subtitulos" for=""><strong>Cuotas:</strong></label>
+  
+          </div>
+          <div>
+              <select class="selectores-cuotas" name="cuotas" id="cuotas"
+                          placeholder="3 Cuotas sin interés">
+                          <option value="3 sin interes">3 Cuotas sin interés</option>
+                      </select>
+          </div>
+      </div>
+          <div class="div-imagenes">
+              <label class="subtitulos" for="imagenes">Imagenes: 
+                <input class="elegir-archivo" type="file" id="imagen" name="imagen" accept="image/*" />
+           
               
-                <div>
-                  <label class="subtitulos"for="descuento">Descuento: </label>
-                  <input
-                    type="number"
-                    id="descuento"
-                    name="descuento"
-                    value="<%= typeof values != 'undefined' ? values.descuento : '' %>"
-                  />
-                </div>
-                <div>
-                  <label class="subtitulos"for="stock">Stock: </label>
-                  <input
-                    type="number"
-                    id="stock"
-                    name="stock"
-                    value="<%= typeof values != 'undefined' ? values.stock : '' %>"
-                  />
-                </div>
+          </div>
+          <div class="botones">
+              <button class="boton" type="submit">Agregar producto</button>
+              <button class="boton">Limpiar</button>
+          </div>
                
-                 </div>
-                 <div>
-                  <label class="subtitulos"for="cuotas">Cuotas: </label>
-                  <input
-                    type="number"
-                    id="cuotas"
-                    name="cuotas"
-                    value="<%= typeof values != 'undefined' ? values.cuotas : '' %>"
-                  />
-              
-              </div>
-              <div>
-                <label class="subtitulos"for="precio">Precio: </label>
-                <input
-                  type="number"
-                  id="precio"
-                  name="precio"
-                  value="<%= typeof values != 'undefined' ? values.precio : '' %>"
-                />
-              <div>
-                <label class="subtitulos"for="imagen">Imagen: </label>
-                <input type="file" id="imagen" name="imagen" accept="image/*" />
-              </div>
-                <button type="submit">Guardar</button>
             </form>
 
 

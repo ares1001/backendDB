@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>categorias</title>
+    <link rel="stylesheet" href="/css/edit.css"/>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('../../partials/header') %>
+        <main class="main">
+            <h1 class="editar-item">Editar categorias</h1>
+
+            <% if (typeof errors != 'undefined') { %>
+            <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+            </ul>
+            <% } %>
+
+            <form 
+            action="/admin/categorias/ <%= values.id %>?_method=PUT" 
+            method="post"
+            >
+
+            
+      
+
+              <div>
+                <label class="subtitulos"for="licencia">Licencia: </label>
+                <input
+                  type="string"
+                  id="licencia"
+                  name="licencia"
+                  value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
+                />
+              </div>
+          
+              
+            
+            
+
+                <button type="submit">Guardar</button>
+            </form>
+
+
+
+        </main>
+        <%- include('../../partials/footer') %>
+</body>
+
+</html>

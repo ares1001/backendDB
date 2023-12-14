@@ -48,6 +48,10 @@ app.use(mainRoutes);
 const cartRoutes = require('./src/routes/cartRoutes');
 app.use('/carrito',cartRoutes);
 
+const adminCategoriasRoutes = require("./src/routes/admin/categoriasRoutes");
+app.use('/admin/categorias' , isLogin, adminCategoriasRoutes);
+
+
 const adminProductosRoutes = require("./src/routes/admin/productosRoutes");
 app.use('/admin/productos' , isLogin, adminProductosRoutes);
 
@@ -88,7 +92,7 @@ const PORT = 3000;
 
 app.listen(PORT,async() => {
   try {
-    await sequelize.sync({ alter: true});
+    await sequelize.sync({ alter: false});
   } catch (error) {
     console.log(error);
   }
