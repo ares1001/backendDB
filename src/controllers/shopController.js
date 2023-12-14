@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 
 const model = require("../models/Product");
-const catModel = require("../models/category");
+const catModel = require("../models/Category");
 
 
 
@@ -16,6 +16,17 @@ const index = async (req, res) => {
     }
 };
 
+const verItem = async (req, res) => {
+    try {
+        const productos = await model.findByPk(req.query.id)
+        
+    console.log(productos);    
+        res.render("shop/item", { productos});
+    
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
 // const create = (req, res) => {
 //     // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));// };
 //     res.render('admin/productos/create');
@@ -130,6 +141,7 @@ const index = async (req, res) => {
 
 module.exports = {
     index,
+    verItem,
     // create,
     //  store,
     // edit,

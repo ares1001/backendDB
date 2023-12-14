@@ -22,6 +22,8 @@ const controller = require('../controllers/shopController');
 // CRUD = Ceate, Read , Update, Delete
 router.get('/', controller.index);
 
+router.get('/verItem', controller.verItem);
+
 // router.get('/create', controller.create);
 
 // router.post("/", upload.single("imagen"), validations, controller.store);

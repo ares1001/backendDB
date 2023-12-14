@@ -3,11 +3,13 @@ const { validationResult } = require("express-validator");
 const model = require("../models/Product");
 
 const index = async (req, res) => {
+   console.log(req.query.id)
     try {
         const a=req.query.id
+        const cantidad=req.query.cantidad
         const productos = await model.findOne({where:{id:a}})
         console.log(productos)
-        res.render("shop/cart", { productos });
+        res.render("shop/cart", { productos,cantidad });
     } catch (error) {
         res.status(500).send(error);
     }

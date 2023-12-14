@@ -48,6 +48,8 @@ app.use(mainRoutes);
 const cartRoutes = require('./src/routes/cartRoutes');
 app.use('/carrito',cartRoutes);
 
+
+
 const adminCategoriasRoutes = require("./src/routes/admin/categoriasRoutes");
 app.use('/admin/categorias' , isLogin, adminCategoriasRoutes);
 
