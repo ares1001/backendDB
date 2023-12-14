@@ -25,9 +25,12 @@
 
                     <select class="search__box" name="orden" aria-placeholder="Mayor a menor">
                         <option value=""></option>
-                        <option value="1">STORMTROOPER</option>
-                        <option value="2">PIDGEOTTO</option>
-                        <option value="3">LUNA</option>
+                        <% cate.forEach(categories=> {%>
+                    
+
+                            <option value="<%=categories.name%>"><%=categories.name%></option>
+                           
+                            <%}) %>
                     </select>
 
                     <div class="search__precios">
@@ -78,7 +81,7 @@
                                             $<%=producto.precio%>
                                         </p>
                                         <p class="shop-item__promo">
-                                            <%=producto.cuotas%>
+                                            <%=producto.cuotas%> cuotas sin interes
                                         </p>
                                     </div>
                                 </a>

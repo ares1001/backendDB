@@ -1,14 +1,16 @@
 const { validationResult } = require("express-validator");
 
 const model = require("../models/Product");
+const catModel = require("../models/category");
 
 
 
 const index = async (req, res) => {
     try {
         const productos = await model.findAll()
+        const cate = await catModel.findAll()
         
-        res.render("shop/shop", { productos });
+        res.render("shop/shop", { productos,cate });
     } catch (error) {
         res.status(500).send(error);
     }

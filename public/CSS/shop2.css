@@ -156,9 +156,19 @@ img {
 .shop-section {
   display: flex;
   width: 96rem;
-  height: 160rem;
+  min-height: 160rem;
+  height: auto;
 }
 
+.shop_item{
+    margin: 0;
+    padding: 0px 10px 10px 5px;
+    
+}
+
+.shop__item{
+    padding:0;
+}
 .shop__form {
     display : flex;
     width: 24rem;
@@ -208,12 +218,12 @@ img {
 }
 
 .shop-item__name {
-    font-size: var(--font-medium);
+    font-size: var(--font-xsmall);
     font-weight: 700;
 }
 
 .shop-item__price {
-    font-size: var(--font-small);
+    font-size: var(--font-xsmall);
 }
 
 .shop-item__promo {
