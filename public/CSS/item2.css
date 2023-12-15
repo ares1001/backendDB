@@ -234,3 +234,21 @@
     color: #1D84B5;
     padding-bottom: 1rem;
 }
+
+@media (max-width: 750px) {
+
+    .shop-container {
+        display: grid;
+        grid-template-columns: 100%;
+        
+    }
+    .shop__items {
+        display: grid;
+        grid-template-columns: 100%;
+        /* grid-template-rows: 1fr; */
+        align-items: stretch;
+        padding: 2rem;
+    }
+
+    
+    } 
