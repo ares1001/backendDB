@@ -37,9 +37,34 @@
     margin-left: 40px;
 }
 
+.card-item__img2{
+    display: none;
+}
+
 
 .pago{
     color: var(--secondary-solid);
     font-size: var(--font-small);
 }
 
+@media screen and (max-width: 550px){
+  
+  .todo{
+    margin-top: 50px;
+  }
+ 
+    .item__info{
+        margin-top: 20px;
+        margin: 0;
+    }
+    .card-item__img{
+        display: none;
+    }
+
+    .card-item__img2{
+        display: block;
+    }
+    .pago{
+        display: none;
+    }
+  }

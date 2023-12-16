@@ -266,11 +266,16 @@ footer {
     text-align: start;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 500px) {
+    .shop-section{
+width: auto;
+display: grid;
 
+    }
     .shop-container {
         display: grid;
         grid-template-columns: 100%;
+        margin-top: 5rem;
         
     }
     .shop__items {
@@ -280,6 +285,20 @@ footer {
         align-items: stretch;
         padding: 2rem;
     }
-
-    
+.shop-item{
+    margin-bottom: 20px;
+}
+    .form-container{
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: center;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+    .filter {
+        display: none !important;
+    }
+    .search__precios{
+    display: none;
+    }
     } 

@@ -185,7 +185,7 @@
   .pagination_section ul{
     display: flex;
   }
-  @media (max-width: 750px) {
+  /* @media (max-width: 750px) {
 
     .shop-container {
         display: grid;
@@ -201,4 +201,4 @@
     }
 
     
-    } 
+    }  */

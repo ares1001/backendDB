@@ -19,11 +19,15 @@
     <div class="todo">
 <section class="item">
     <picture class="item__img card-item__cover">
-      <img class="card-item__img--front"   src="/uploads/productos/producto_<%= productos.id %>.jpg" alt="Producto">
-      <img class="card-item__img--back"   src="/uploads/productos/producto_<%= productos.id %>.jpg" alt="Producto">
+      <img class="card-item__img"   src="/uploads/productos/producto_<%= productos.id %>.jpg" alt="Producto">
+  
 </picture>    
 </section>
 <section class="item__info">
+    <picture class="item__img card-item__cover2">
+        <img class="card-item__img2"   src="/uploads/productos/producto_<%= productos.id %>.jpg" alt="Producto">
+    
+  </picture> 
   <p class="item__licence"   ><%=productos.licencia%></p>
   <h3 class="item__name"   ><%=productos.nombre%></h3>
   
@@ -35,13 +39,13 @@
   
     <button id="subtract" class="item__quantity" type="button">-</button>
     <input class="item_cantidad" type="text" name="cantidad" id="quantity" placeholder="0"/>
-    <input class="item_cantidad" type="hidden" name="id" value="<%=productos.precio%>"/>
+    <input class="item_cantidad" type="hidden" name="id" value="<%=productos.id%>"/>
     <button id="add" class="item__quantity" type="button">+</button>
     <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar</button>
  
   </div>
 </form>
-  <a href="./pages/" class="pago">Ver métodos de pago - 3 CUOTAS SIN INTERÉS</a>
+  <a href="#" class="pago">Ver métodos de pago - 3 CUOTAS SIN INTERÉS</a>
 </section>
 </section>
 </div>
