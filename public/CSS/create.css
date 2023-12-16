@@ -121,6 +121,30 @@
     margin-right: 15px;
     border: none;
     padding: var(--spacing-6);
+
+}
+
+
+.boton-enviar{
+    background-color: var(--primary-solid);
+    display: inline;
+    color: var(--light-font-solid);
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 15px;
+    border: none;
+    padding: var(--spacing-6);
+}
+
+.boton-register{
+    background-color: var(--primary-solid);
+    display: inline;
+    color: var(--light-font-solid);
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 15px;
+    border: none;
+    padding: var(--spacing-6);
 }
 
 .div-imagenes {
