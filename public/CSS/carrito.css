@@ -270,11 +270,28 @@
   /* CSS para dispositivos con pantalla pequeña (por ejemplo, teléfonos móviles) */
   @media (max-width: 767px) {
     .item__cart{
-      width: 40px; /* Reducimos aún más el tamaño para pantallas muy pequeñas */
+      width: 60px; /* Reducimos aún más el tamaño para pantallas muy pequeñas */
       height: 20px;
       /* ...resto de tu CSS... */
     }
+    .funko{    display: grid;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    column-gap: var(--spacing-20);
     /* ...resto de tus selectores... */
+    }
+    .item__input{
+        width: 50px
+    }
+    .cart-table__header--detalles{
+        padding-left: 0;
+    }
+    .cart-table__header--cantidad{
+        padding-right: 5px;
+
+    .cart-table__header--total{
+        padding-left: 15px ;
+    }
   }
   
 
