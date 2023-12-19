@@ -14,6 +14,7 @@ const validations = [
     .isLength({min:2})
     .withMessage("Tiene que ser 2 caracteres")
     .bail(),
+    body("codigo").not().isEmpty().withMessage("el codigo es obligatorio"),
     body("precio").not().isEmpty().withMessage("el precio es obligatorio"),
 ];
 

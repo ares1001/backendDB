@@ -17,7 +17,7 @@ const Producto = sequelize.define("Producto", {
   },
   licencia :{
     type: DataTypes.STRING,
-    allowNull:true,
+    allowNull:false,
     unique:false,
     
  },

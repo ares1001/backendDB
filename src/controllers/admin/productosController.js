@@ -32,8 +32,11 @@ const create = async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
+      const cate = await modelCat.findAll()
+
         return res.render("admin/productos/create", {
             values: req.body,
+            cate,
             errors: errors.array(),
         });
     }
