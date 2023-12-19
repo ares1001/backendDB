@@ -7,10 +7,11 @@
     <title>Productos</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="/css/product-list.css">
 </head>
 
 <body>
-    <%- include('../../partials/headerLogout') %>
+    <%- include('../../partials/header') %>
     
         <main class="container">
             <form action="" class="form__admin container">
@@ -32,7 +33,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th class="id_noMobile">Id</th>
                             <th>Codigo</th>
                             <th>Nombre del Producto</th>
                             <th>Categoria</th>
@@ -42,7 +43,7 @@
                     <tbody>
                         <% productos.forEach(producto=> {%>
                             <tr>
-                                <td>
+                                <td class="id_noMobile">
                                     <%= producto.id %>
                                 </td>
                                 <td>
@@ -59,7 +60,7 @@
                     
                                 
                             
-                                <td>
+                                <td class="inline">
                                     <form class="form-edit" style="display:inline"
                                         action="/admin/productos/<%= producto.id %>/edit" method="put">
                                         <button class="boton" type="submit">Editar</button>

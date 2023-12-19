@@ -160,3 +160,28 @@
     font-family: var(--alternative-font);
     font-size: 14px;
 }
+@media (max-width: 500px) {
+    .main{
+width: 480px;
+display: grid;
+grid-template-columns: 100%;
+margin-left: 15px;
+
+    }
+    .textarea {
+         width: auto; 
+        margin: 30px 0;
+        padding-top: 10px;
+        padding-left: 10px;
+        border-radius: 4px;
+        color: var(--light-color);
+    }
+    .caracteristicas {
+  
+    width: 200px;
+    height: 62px;
+    display: flex;
+    margin-bottom: 12px;
+}
+}
+

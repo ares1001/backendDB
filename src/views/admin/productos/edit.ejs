@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Productos</title>
+    <title>Productos</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/create.css">
 </head>
 <body>
     <%- include('../../partials/header') %>
-    <form 
-    action="/admin/productos" 
-    method="post"
-    enctype="multipart/form-data">
+    
     
         <main class="main">
-            <h1 class="crear-item">EDITAR PRODUCTO</h1>
+            <h1 class="crear-item">Editar Producto</h1>
 
             <% if (typeof errors != 'undefined') { %>
             <ul>
@@ -26,32 +23,64 @@
             <% } %>
 
             <form 
-            action="/admin/productos/<%= values.id %>?_method=PUT" 
+            action="/admin/productos/<%= producto.id %>?_method=PUT" 
             method="post"
             enctype="multipart/form-data">
 
             
       
-            <div>
+                      <div class="contenedor-div">
   
               <label class="subtitulos" for=""><strong>Nombre del producto:</strong> 
-                <input class="input-sinborde-maslargo" 
+                <input class="selectores input-sinborde-maslargo" 
                 type="text" 
                 name="nombre"
-                placeholder=""></label>
+                placeholder=""
+                value="<%=producto.nombre%>">
+            </label>
   
           </div>
+          <div class="contenedor-div">
+       
+          
+            <label class="subtitulos" for=""><strong>Licencia:</strong>
+            <select class="selectores" name="licencia" 
+                id="licencia" placeholder="Seleccionar">
+                <% cate.forEach(categories=> {%>
+                  
+
+                    <option value="<%=categories.name%>"><%=categories.name%></option>
+                   
+                    <%}) %>
+                </select>
+            </label>        
+    </div>
           <div>
               <textarea class="textarea" name="descripcion" rows="10" cols="40">Descripción del producto</textarea>
           </div>
           <div class="caracteristicas">
               <!--VER EL TYPE DE INT-->
               <label class="subtitulos" for=""><strong>SKU:</strong> 
-                  <input class="input-sinborde-largo" type="text" name="codigo" placeholder=""></label>
+                  <input class="input-sinborde-largo" 
+                  type="text" 
+                  name="codigo" 
+                  placeholder=""
+                  value="<%=producto.codigo%>">
+                </label>
               <label class="subtitulos" for=""> <strong>Precio:</strong> 
-                  <input class="input-sinborde-largo" type="int" name="precio" placeholder=""></label>
+                  <input class="input-sinborde-largo" 
+                  type="int" 
+                  name="precio" 
+                  placeholder=""
+                  value="<%=producto.precio%>">
+                </label>
               <label class="subtitulos" for=""><strong>Stock:</strong>
-                  <input class="input-sinborde-corto" type="int" name="stock" placeholder="5"></label>
+                  <input class="input-sinborde-corto" 
+                  type="int" 
+                  name="stock" 
+                  placeholder=""
+                  value="<%=producto.stock%>">
+                </label>
   
           </div>
       <div class="pago-completo">
@@ -78,7 +107,7 @@
               <button class="boton" type="submit">Agregar producto</button>
               <button class="boton">Limpiar</button>
           </div>
-               
+              
             </form>
 
 

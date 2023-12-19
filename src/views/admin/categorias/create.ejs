@@ -32,15 +32,24 @@
        
             <form action="/admin/categorias" method="post">
                 <div>
-                  <label class="subtitulos" for="name">Nombre de la licencia </label>
-                  <input
+                  <label class="subtitulos" for="name"><strong>Nombre de la licencia </strong>
+                  <input class="input-sinborde-maslargo"
                     type="text"
                     id="name"
                     name="name"
                     value="<%= typeof values != 'undefined' ? values.name : '' %>"
-                  />
+                  /></label>
                 </div>
-                <button type="submit">Guardar</button>
+                <!-- <div bis_skin_checked="1">
+  
+                  <label class="subtitulos" for=""><strong>Nombre del producto:</strong> 
+                    <input  type="text" name="nombre" placeholder=""></label>
+      
+              </div> -->
+                <div class="botones" bis_skin_checked="1">
+                  <button class="boton" type="submit">Agregar categoria</button>
+                 
+              </div>
               </form>
             </main>
             <%- include('../../partials/footer') %>

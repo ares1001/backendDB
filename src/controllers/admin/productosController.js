@@ -65,11 +65,12 @@ const create = async (req, res) => {
 const edit = async (req, res ) => {
 
   try {
+    const cate = await modelCat.findAll()
    const producto = await model.findByPk(req.params.id);
    console.log(producto);
 
-   if(producto) {
-    res.render("admin/productos/edit", {values:producto});
+   if(producto && cate) {
+    res.render("admin/productos/edit", {producto,cate});
    } else {
     res.status(404).send(" No existe el producto")
    }

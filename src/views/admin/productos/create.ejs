@@ -13,10 +13,7 @@
 
 <body>
     <%- include('../../partials/header') %>
-    <form 
-    action="/admin/productos" 
-    method="post"
-    enctype="multipart/form-data">
+    
 
         <main class="main">
           <h1 class="crear-item">CREAR NUEVO ITEM</h1>
@@ -30,7 +27,10 @@
             <% } %>
   
         <div class="contenedor-div">
-       
+            <form 
+            action="/admin/productos" 
+            method="post"
+            enctype="multipart/form-data">
           
               <label class="subtitulos" for=""><strong>Licencia:</strong>
               <select class="selectores" name="licencia" 
@@ -91,10 +91,11 @@
           <div class="botones">
               <button class="boton" type="submit">Agregar producto</button>
               <button class="boton">Limpiar</button>
-          </div>
-               
+       </div>
+       </form>         
+    </div>   
       </main>
-    </form>
+   
         <%- include('../../partials/footer') %>
 </body>
 

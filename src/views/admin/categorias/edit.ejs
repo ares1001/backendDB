@@ -6,11 +6,15 @@
     <title>categorias</title>
     <link rel="stylesheet" href="/css/edit.css"/>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/create.css">
 </head>
 <body>
     <%- include('../../partials/header') %>
+    <form 
+    action="/admin/categorias/ <%= values.id %>?_method=PUT" 
+    method="post">
         <main class="main">
-            <h1 class="editar-item">Editar categorias</h1>
+            <h1 class="crear-item">Editar categorias</h1>
 
             <% if (typeof errors != 'undefined') { %>
             <ul>
@@ -20,15 +24,11 @@
             </ul>
             <% } %>
 
-            <form 
-            action="/admin/categorias/ <%= values.id %>?_method=PUT" 
-            method="post"
-            >
 
             
       
 
-              <div>
+              <!-- <div>
                 <label class="subtitulos"for="licencia">Licencia: </label>
                 <input
                   type="string"
@@ -36,18 +36,18 @@
                   name="licencia"
                   value="<%= typeof values != 'undefined' ? values.licencia : '' %>"
                 />
-              </div>
+              </div> -->
           
               
             
             
 
                 <button type="submit">Guardar</button>
-            </form>
+          
 
 
 
-        </main>
+        </main>  </form>
         <%- include('../../partials/footer') %>
 </body>
 

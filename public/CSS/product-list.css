@@ -197,3 +197,43 @@ img {
         font-weight: 500;
         
     }
+
+    @media (max-width: 500px) {
+        .container{
+    width: 480px;
+    display: grid;
+    grid-template-columns: 100%;
+    margin-left: 15px;
+    font-size: 6px;
+    
+        }
+   
+        .caracteristicas {
+      
+        width: 200px;
+        height: 62px;
+        display: flex;
+        margin-bottom: 12px;
+    }
+    .id_noMobile{
+        display:none;
+    }
+  
+    .boton {
+        float: right;
+        /* width: 40px; */
+        padding: 2px;
+        background-color: var(--primary-solid);
+        color: var(--light-font-solid);
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 15px;
+        border: none; 
+        padding: 6px;
+    }
+    .inline{
+        display:flex;
+    }
+}
+    
+    

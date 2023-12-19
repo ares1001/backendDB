@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/product-list.css">
 </head>
 <body>
-    <%- include('../../partials/headerLogout') %>
+    <%- include('../../partials/header') %>
             <main class="container">
             <form action="" class="form__admin container">
                 <img class="form__img" src="/img/icons/search_icon.svg" alt="Lupa">
@@ -46,10 +46,7 @@
                                 
                             
                                 <td>
-                                    <form class="form-edit" style="display:inline"
-                                        action="/admin/categorias/<%= categoria.id %>/edit" method="put">
-                                        <button class="boton" type="submit">Editar</button>
-                                    </form>
+                                
                                     
                                     <form class="form-delete" style="display:inline"
                                         action="/admin/categorias/<%= categoria.id %>?_method=DELETE" method="post">
